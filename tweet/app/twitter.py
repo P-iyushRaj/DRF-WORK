@@ -2,17 +2,18 @@ import tweepy
 from tweepy.auth import OAuthHandler
 from .models import Tweet
 
-ConsumerKey  = 'LdWeCQV9McfbiD9ypEwYNDH0k'
-ConsumerSecret = 'jcH3fjLQJ4VcSLAvfvr8i4Cm3nJz9yzItIA4IHGBZGFaL0aQ3m'
-OAuthAccessToken = '4190585592-nnGEwj1vXxVPy3bI7s5gfLdGc6ELBMt49HFYNmJ'
-OAuthAccessTokenSecret = 'xlNbpxPDTwkNNUinUg7CIlmCcci2PPRjHGurzb0eGoQrC'
+ConsumerKey  = '99CU3AtOt9HcbzybPPeWhn1Ka'
+ConsumerSecret = 'u3EBMm5ptJE0pAoa3aoq2umsgtGbX08c5FlI64wI8XZ8bXpRrZ'
+OAuthAccessToken = '4190585592-h1xPB02HRZGzIzU4egn1M8U3M9XkkDNEpwAlOIW'
+OAuthAccessTokenSecret = 'vcfZ3M3ajXvar3qmS5aypeSlCPDJfdjVzOR4Eve3TQUKX'
 #BearerToken = 'AAAAAAAAAAAAAAAAAAAAAAwVNwEAAAAA4E%2BSonkXQ8fFBiS2fNRRB5AQgJ4%3DUXWmgS9QuTVqzaZ49775isqwwpIAZK91rpwzrfqBva51zWWkXt'
 
 def user_tweets():
-    auth = OAuthHandler('ConsumerKey', 'ConsumerSecret')
-    auth.set_access_token('OAuthAccessToken', 'OAuthAccessTokenSecret')
+    auth = OAuthHandler( ConsumerKey, ConsumerSecret )
+    auth.set_access_token( OAuthAccessToken, OAuthAccessTokenSecret )
+    #breakpoint()
     api = tweepy.API(auth)
-    user_tweets = api.user_timeline(count=20)
+    user_tweets = api.user_timeline(count=10)
     return user_tweets
 
 def save_to_db():
