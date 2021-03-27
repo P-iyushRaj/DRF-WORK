@@ -49,4 +49,6 @@ while True:
     sleep(5)
     save_to_db()
 
+#brew services restart rabbitmq
+#celery --app tweet worker -l info
 
