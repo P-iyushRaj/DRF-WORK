@@ -19,6 +19,6 @@ from app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('fatch/', views.tweet_fetch),
+    #path('fatch/', views.tweet_fetch),
     path('tweets/', views.TweetListS.as_view())
 ]
